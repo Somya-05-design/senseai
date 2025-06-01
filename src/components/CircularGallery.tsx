@@ -1,11 +1,9 @@
 
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
 } from "@/components/ui/carousel";
 
 interface GalleryItem {
@@ -26,8 +24,40 @@ export const CircularGallery: React.FC<CircularGalleryProps> = ({
   textColor = "#1e293b",
   borderRadius = 0.05,
 }) => {
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      {
+        threshold: 0.1,
+        rootMargin: '0px 0px -100px 0px'
+      }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
   return (
-    <div className="relative w-full max-w-6xl mx-auto">
+    <div 
+      ref={sectionRef}
+      className={`relative w-full max-w-6xl mx-auto transition-all duration-1000 ease-out ${
+        isVisible ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'
+      }`}
+    >
       <Carousel
         opts={{
           align: "start",
@@ -70,8 +100,6 @@ export const CircularGallery: React.FC<CircularGalleryProps> = ({
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious className="left-0" />
-        <CarouselNext className="right-0" />
       </Carousel>
     </div>
   );
