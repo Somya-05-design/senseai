@@ -1,10 +1,7 @@
-
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-
 export const Hero = () => {
-  return (
-    <section id="home" className="relative bg-gradient-to-br from-emerald-50 via-white to-gray-50 pt-16 pb-24">
+  return <section id="home" className="relative bg-gradient-to-br from-emerald-50 via-white to-gray-50 pt-16 pb-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           {/* Hero Headline */}
@@ -23,18 +20,11 @@ export const Hero = () => {
 
           {/* Hero CTA */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-            <Button 
-              size="lg" 
-              className="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 text-lg font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
-            >
+            <Button size="lg" className="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 text-lg font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
               Start Optimizing Now
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
-            <Button 
-              variant="outline" 
-              size="lg"
-              className="border-2 border-emerald-600 text-emerald-600 hover:bg-emerald-50 px-8 py-4 text-lg font-semibold rounded-lg transition-all duration-300"
-            >
+            <Button variant="outline" size="lg" className="border-2 border-emerald-600 text-emerald-600 hover:bg-emerald-50 px-8 py-4 text-lg font-semibold rounded-lg transition-all duration-300">
               View Demo
             </Button>
           </div>
@@ -46,7 +36,7 @@ export const Hero = () => {
               <div className="text-gray-600 font-medium">Average Cost Reduction</div>
             </div>
             <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
-              <div className="text-3xl font-bold text-emerald-600 mb-2">16</div>
+              <div className="text-3xl font-bold text-emerald-600 mb-2">Highly</div>
               <div className="text-gray-600 font-medium">Specialized AI Agents</div>
             </div>
             <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
@@ -62,6 +52,5 @@ export const Hero = () => {
         <div className="absolute top-20 right-10 w-72 h-72 bg-emerald-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse"></div>
         <div className="absolute bottom-20 left-10 w-96 h-96 bg-gray-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse"></div>
       </div>
-    </section>
-  );
+    </section>;
 };
