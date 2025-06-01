@@ -1,5 +1,5 @@
-
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -8,6 +8,7 @@ import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Eye, EyeOff, User, Mail, Lock, Phone, Building } from 'lucide-react';
 
 export const SignupForm = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
@@ -33,6 +34,9 @@ export const SignupForm = () => {
     await new Promise(resolve => setTimeout(resolve, 1500));
     
     console.log('Signup attempt:', formData);
+    
+    // Redirect to dashboard
+    navigate('/dashboard');
     setIsLoading(false);
   };
 
