@@ -1,87 +1,72 @@
 
-import { Bot, Settings, BarChart, Target, DollarSign, TrendingUp, Shield, Wrench, Zap, Users, Activity, Brain, ArrowRight, Router } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import { CircularGallery } from "./CircularGallery";
 
 export const AIAgentsSection = () => {
   const agents = [
     {
-      icon: Settings,
-      name: "Orchestrator Agent",
-      purpose: "Central coordination of all AI agents and task distribution across the platform"
+      image: "/agents/orchestrator.png",
+      text: "Orchestrator Agent"
     },
     {
-      icon: Zap,
-      name: "AI Task Automation Agent", 
-      purpose: "Automates repetitive AI tasks and workflows for maximum efficiency"
+      image: "/agents/automation.png", 
+      text: "AI Task Automation Agent"
     },
     {
-      icon: BarChart,
-      name: "AI Function Analysis Agent",
-      purpose: "Analyzes AI function performance and identifies optimization opportunities"
+      image: "/agents/analysis.png",
+      text: "AI Function Analysis Agent"
     },
     {
-      icon: Bot,
-      name: "LLM Selection Agent",
-      purpose: "Intelligently selects the most cost-effective LLM for each specific task"
+      image: "/agents/llm-selection.png",
+      text: "LLM Selection Agent"
     },
     {
-      icon: DollarSign,
-      name: "Cost Optimization Agent",
-      purpose: "Continuously monitors and optimizes AI infrastructure costs in real-time"
+      image: "/agents/cost-optimization.png",
+      text: "Cost Optimization Agent"
     },
     {
-      icon: Target,
-      name: "Inference Cost Estimator Agent",
-      purpose: "Provides accurate cost estimates for AI inference operations before execution"
+      image: "/agents/inference-estimator.png",
+      text: "Inference Cost Estimator Agent"
     },
     {
-      icon: TrendingUp,
-      name: "ROI Analysis Agent",
-      purpose: "Calculates and tracks return on investment for AI optimization initiatives"
+      image: "/agents/roi-analysis.png",
+      text: "ROI Analysis Agent"
     },
     {
-      icon: BarChart,
-      name: "Cost Forecasting Agent",
-      purpose: "Predicts future AI costs based on usage patterns and optimization trends"
+      image: "/agents/cost-forecasting.png",
+      text: "Cost Forecasting Agent"
     },
     {
-      icon: Shield,
-      name: "Compliance & Risk Agent",
-      purpose: "Ensures AI operations meet regulatory requirements and risk management standards"
+      image: "/agents/compliance-risk.png",
+      text: "Compliance & Risk Agent"
     },
     {
-      icon: Wrench,
-      name: "Custom Model Builder Agent",
-      purpose: "Creates and optimizes custom AI models tailored to specific business requirements"
+      image: "/agents/model-builder.png",
+      text: "Custom Model Builder Agent"
     },
     {
-      icon: Brain,
-      name: "Prompt Optimizer Agent", 
-      purpose: "Optimizes AI prompts for better performance and reduced token consumption"
+      image: "/agents/prompt-optimizer.png", 
+      text: "Prompt Optimizer Agent"
     },
     {
-      icon: Users,
-      name: "User Behavior Analytics Agent",
-      purpose: "Analyzes user interaction patterns to optimize AI resource allocation"
+      image: "/agents/user-analytics.png",
+      text: "User Behavior Analytics Agent"
     },
     {
-      icon: Activity,
-      name: "Performance Monitoring Agent",
-      purpose: "Continuously monitors AI system performance and identifies bottlenecks"
+      image: "/agents/performance-monitoring.png",
+      text: "Performance Monitoring Agent"
     },
     {
-      icon: Brain,
-      name: "Insight Aggregator Agent",
-      purpose: "Aggregates data from all agents to provide comprehensive optimization insights"
+      image: "/agents/insight-aggregator.png",
+      text: "Insight Aggregator Agent"
     },
     {
-      icon: ArrowRight,
-      name: "Integration Agent",
-      purpose: "Manages seamless integration with existing enterprise systems and workflows"
+      image: "/agents/integration.png",
+      text: "Integration Agent"
     },
     {
-      icon: Router,
-      name: "LLM Router Agent",
-      purpose: "Intelligently routes requests to the most appropriate LLM based on cost and performance"
+      image: "/agents/llm-router.png",
+      text: "LLM Router Agent"
     }
   ];
 
@@ -99,26 +84,14 @@ export const AIAgentsSection = () => {
           </p>
         </div>
 
-        {/* Agents Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {agents.map((agent, index) => (
-            <div 
-              key={index}
-              className="bg-gray-50 p-6 rounded-xl hover:bg-emerald-50 transition-all duration-300 group border border-gray-100 hover:border-emerald-200 hover:shadow-lg"
-            >
-              <div className="flex flex-col items-center text-center">
-                <div className="w-16 h-16 bg-white rounded-xl flex items-center justify-center mb-4 group-hover:bg-emerald-100 transition-colors duration-300 shadow-sm">
-                  <agent.icon className="w-8 h-8 text-emerald-600" />
-                </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                  {agent.name}
-                </h3>
-                <p className="text-sm text-gray-600 leading-relaxed">
-                  {agent.purpose}
-                </p>
-              </div>
-            </div>
-          ))}
+        {/* Agents Carousel */}
+        <div className="mb-16">
+          <CircularGallery 
+            items={agents}
+            bend={3}
+            textColor="#1e293b"
+            borderRadius={0.05}
+          />
         </div>
 
         {/* Agent Orchestration Info */}
