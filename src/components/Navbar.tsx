@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -13,9 +14,11 @@ export const Navbar = () => {
           {/* Logo */}
           <div className="flex items-center">
             <div className="flex-shrink-0">
-              <h1 className="text-2xl font-bold text-gray-900">
-                AI Cost <span className="text-emerald-600">Optimizer</span>
-              </h1>
+              <Link to="/">
+                <h1 className="text-2xl font-bold text-gray-900">
+                  AI Cost <span className="text-emerald-600">Optimizer</span>
+                </h1>
+              </Link>
             </div>
           </div>
 
@@ -39,12 +42,16 @@ export const Navbar = () => {
 
           {/* Desktop CTA Buttons */}
           <div className="hidden md:flex items-center space-x-4">
-            <Button variant="outline" className="border-emerald-600 text-emerald-600 hover:bg-emerald-50">
-              Sign In
-            </Button>
-            <Button className="bg-emerald-600 hover:bg-emerald-700">
-              Get Started
-            </Button>
+            <Link to="/auth">
+              <Button variant="outline" className="border-emerald-600 text-emerald-600 hover:bg-emerald-50">
+                Sign In
+              </Button>
+            </Link>
+            <Link to="/auth">
+              <Button className="bg-emerald-600 hover:bg-emerald-700">
+                Get Started
+              </Button>
+            </Link>
           </div>
 
           {/* Mobile menu button */}
@@ -75,12 +82,16 @@ export const Navbar = () => {
                 About
               </a>
               <div className="px-3 py-2 space-y-2">
-                <Button variant="outline" className="w-full border-emerald-600 text-emerald-600 hover:bg-emerald-50">
-                  Sign In
-                </Button>
-                <Button className="w-full bg-emerald-600 hover:bg-emerald-700">
-                  Get Started
-                </Button>
+                <Link to="/auth">
+                  <Button variant="outline" className="w-full border-emerald-600 text-emerald-600 hover:bg-emerald-50">
+                    Sign In
+                  </Button>
+                </Link>
+                <Link to="/auth">
+                  <Button className="w-full bg-emerald-600 hover:bg-emerald-700">
+                    Get Started
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>
