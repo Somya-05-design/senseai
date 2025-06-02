@@ -131,29 +131,29 @@ export const ChatInterface = () => {
   };
 
   return (
-    <div className="backdrop-blur-xl bg-white/80 border border-white/20 rounded-2xl shadow-xl p-6 h-[600px] flex flex-col">
-      <div className="flex items-center space-x-3 mb-6 pb-4 border-b border-gray-200">
-        <div className="w-10 h-10 bg-gradient-to-r from-green-500 to-emerald-600 rounded-full flex items-center justify-center">
-          <Bot className="h-5 w-5 text-white" />
+    <div className="backdrop-blur-xl bg-white/80 border border-white/20 rounded-2xl shadow-xl p-4 h-full flex flex-col">
+      <div className="flex items-center space-x-3 mb-4 pb-2 border-b border-gray-200">
+        <div className="w-8 h-8 bg-gradient-to-r from-green-500 to-emerald-600 rounded-full flex items-center justify-center">
+          <Bot className="h-4 w-4 text-white" />
         </div>
         <div>
-          <h2 className="text-xl font-semibold text-gray-900">AI Agent Chat</h2>
-          <p className="text-sm text-gray-500">Multi-agent responses powered by AI</p>
+          <h2 className="text-lg font-semibold text-gray-900">AI Agent Chat</h2>
+          <p className="text-xs text-gray-500">Multi-agent responses powered by AI</p>
         </div>
       </div>
 
       {/* Messages Container */}
-      <div className="flex-1 overflow-y-auto space-y-4 mb-4">
+      <div className="flex-1 overflow-y-auto space-y-3 mb-3">
         {messages.length === 0 && (
-          <div className="text-center py-8">
-            <Bot className="h-12 w-12 text-gray-300 mx-auto mb-4" />
-            <p className="text-gray-500">Start a conversation with your AI agents</p>
+          <div className="text-center py-4">
+            <Bot className="h-8 w-8 text-gray-300 mx-auto mb-2" />
+            <p className="text-gray-500 text-sm">Start a conversation with your AI agents</p>
           </div>
         )}
         
         {messages.map((message) => (
           <div key={message.id} className={`flex ${message.type === 'user' ? 'justify-end' : 'justify-start'}`}>
-            <div className={`max-w-xs lg:max-w-md px-4 py-3 rounded-lg ${
+            <div className={`max-w-xs lg:max-w-sm px-3 py-2 rounded-lg ${
               message.type === 'user'
                 ? 'bg-gradient-to-r from-green-500 to-emerald-600 text-white'
                 : 'bg-gray-100 text-gray-900'
@@ -175,7 +175,7 @@ export const ChatInterface = () => {
         
         {isTyping && (
           <div className="flex justify-start">
-            <div className="bg-gray-100 text-gray-900 px-4 py-3 rounded-lg max-w-xs">
+            <div className="bg-gray-100 text-gray-900 px-3 py-2 rounded-lg max-w-xs">
               <div className="flex space-x-1">
                 <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></div>
                 <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
@@ -195,13 +195,14 @@ export const ChatInterface = () => {
           onChange={(e) => setInputValue(e.target.value)}
           onKeyPress={handleKeyPress}
           placeholder="Ask your AI agents anything..."
-          className="flex-1 border-gray-200 focus:border-green-500 focus:ring-green-500"
+          className="flex-1 border-gray-200 focus:border-green-500 focus:ring-green-500 text-sm"
           disabled={isTyping}
         />
         <Button
           onClick={handleSendMessage}
           disabled={!inputValue.trim() || isTyping}
           className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700"
+          size="sm"
         >
           <Send className="h-4 w-4" />
         </Button>
