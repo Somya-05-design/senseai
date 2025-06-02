@@ -9,7 +9,7 @@ export const Footer = () => {
           {/* Company Info */}
           <div className="col-span-1 md:col-span-2">
             <h3 className="text-2xl font-bold mb-4">
-              AI Cost <span className="text-emerald-400">Optimizer</span>
+              Sense <span className="text-emerald-400">Ai</span>
             </h3>
             <p className="text-gray-300 mb-6 max-w-md">
               Transform your AI operations with intelligent multi-agent orchestration. 
@@ -18,7 +18,7 @@ export const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center text-gray-300">
                 <Mail className="w-5 h-5 mr-3 text-emerald-400" />
-                <span>contact@aicostoptimizer.com</span>
+                <span>contact@senseai.com</span>
               </div>
               <div className="flex items-center text-gray-300">
                 <Phone className="w-5 h-5 mr-3 text-emerald-400" />
@@ -60,7 +60,7 @@ export const Footer = () => {
         <div className="border-t border-gray-800 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-gray-400 text-sm">
-              © 2024 AI Cost Optimizer. All rights reserved.
+              © 2024 Sense Ai. All rights reserved.
             </div>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <a href="#" className="text-gray-400 hover:text-emerald-400 text-sm transition-colors">Privacy Policy</a>

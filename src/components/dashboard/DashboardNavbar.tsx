@@ -30,7 +30,7 @@ export const DashboardNavbar = () => {
                 <span className="text-white font-bold text-sm">AI</span>
               </div>
               <h1 className="text-xl font-bold bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">
-                Multi-Agent Platform
+                Sense Ai
               </h1>
             </Link>
           </div>
