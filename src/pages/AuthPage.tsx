@@ -59,8 +59,10 @@ const AuthPage = () => {
             </div>
             
             <div className={`absolute top-0 left-0 w-full transition-transform duration-500 ease-in-out ${isLoginMode ? 'translate-x-full' : 'translate-x-0'}`}>
-              <ScrollArea className="h-[60vh] w-full">
-                <SignupForm />
+              <ScrollArea className="h-[70vh] w-full">
+                <div className="pr-4">
+                  <SignupForm />
+                </div>
               </ScrollArea>
             </div>
           </div>
